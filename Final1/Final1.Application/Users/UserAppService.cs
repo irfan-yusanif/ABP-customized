@@ -72,7 +72,7 @@ namespace Final1.Users
             
             CheckErrors(await UserManager.CreateAsync(user));
 
-            await _roleAppService.AddRoleForUser(input.Role);
+           // await _roleAppService.AddRoleForUser(input.Role);
             // await _roleAppService.UpdateRolePermissions(input.Role);
         }
     }
