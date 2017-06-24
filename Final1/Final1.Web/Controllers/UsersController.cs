@@ -41,7 +41,7 @@ namespace Final1.Web.Controllers
             return View(uListResultDto);
         }
 
-        public IEnumerable<SelectListItem> RolesSelectList()
+        public IEnumerable<SelectListItem> UserRolesSelectList()
         {
             IQueryable<Role> roles = _roleAppService.GetAllRoles().Result;
             return roles.Select(x => new SelectListItem {Value = x.Id.ToString(), Text = x.Name});
