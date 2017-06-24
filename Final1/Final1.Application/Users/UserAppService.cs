@@ -76,9 +76,9 @@ namespace Final1.Users
 
             UserRole userRole = new UserRole(null, user.Id, 1); //how to save this?
 
-            await _userManager.AddToRoleAsync(user.Id, input.Name);
+            await _userManager.AddToRoleAsync(user.Id, input.Role);
 
-            await _roleAppService.AddRoleForUser(input.Role);
+           // await _roleAppService.AddRoleForUser(input.Role);
             //await _roleAppService.CreateRole(); I created from db
 
             // await _roleAppService.UpdateRolePermissions(input.Role);

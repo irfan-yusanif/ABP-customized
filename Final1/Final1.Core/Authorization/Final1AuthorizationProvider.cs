@@ -9,6 +9,13 @@ namespace Final1.Authorization
         public override void SetPermissions(IPermissionDefinitionContext context)
         {
             //Common permissions
+            var manageUserPermission = context.GetPermissionOrNull(PermissionNames.ManageUserPermission);
+            if (manageUserPermission == null)
+            {
+                manageUserPermission = context.CreatePermission(PermissionNames.ManageUserPermission, L("ManageUserPermission"));
+            }
+
+
             var pages = context.GetPermissionOrNull(PermissionNames.Pages);
             if (pages == null)
             {

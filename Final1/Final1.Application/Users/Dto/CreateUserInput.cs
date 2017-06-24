@@ -1,3 +1,4 @@
+using System;
 using System.ComponentModel.DataAnnotations;
 using Abp.Auditing;
 using Abp.Authorization.Users;
@@ -33,6 +34,6 @@ namespace Final1.Users.Dto
 
         public bool IsActive { get; set; }
 
-        public UpdateRolePermissionsInput Role { get; set; }
+        public String Role { get; set; }
     }
 }

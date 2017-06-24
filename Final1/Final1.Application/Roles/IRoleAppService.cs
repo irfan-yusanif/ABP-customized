@@ -9,7 +9,7 @@ namespace Final1.Roles
 {
     public interface IRoleAppService : IApplicationService
     {
-        Task<IQueryable<Role>> GetAllRoles();
+        List<Role> GetAllRoles();
 
         Task UpdateRolePermissions(UpdateRolePermissionsInput input);
     }

@@ -82,10 +82,10 @@
                         <label>Select Role</label>
                         @*@Html.DropDownListFor(model => model.Items, Final1.Web.Models.UserProfile.UserProfileViewModel.UserRolesSelectList(), "--Select One--", new { @class = "form-control" })*@
                         
-                        <select class="form-control">
-                            @foreach (var opt in ((Final1.Web.Controllers.UsersController) ViewContext.Controller).UserRolesSelectList())
+                        <select class="form-control" name="Role">
+                            @foreach (SelectListItem opt in ((Final1.Web.Controllers.UsersController) ViewContext.Controller).UserRolesSelectList())
                             {
-                                <option value="@opt.Value" >@opt.Text</option>
+                                <option value="@opt.Text" >@opt.Text</option>
                             }
                         </select>
 

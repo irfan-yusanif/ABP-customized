@@ -26,9 +26,9 @@ namespace Final1.Roles
             _permissionManager = permissionManager;
         }
 
-        public async Task<IQueryable<Role>> GetAllRoles()
+        public  List<Role> GetAllRoles()
         {
-           return  _roleManager.Roles;
+           return  _roleManager.Roles.ToList();
         }
 
         public async Task AddRoleForUser(UpdateRolePermissionsInput input)

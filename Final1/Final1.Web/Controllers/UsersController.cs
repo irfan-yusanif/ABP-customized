@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Linq.Dynamic.Core;
 using System.Threading.Tasks;
@@ -41,10 +42,10 @@ namespace Final1.Web.Controllers
             return View(uListResultDto);
         }
 
-        public IEnumerable<SelectListItem> UserRolesSelectList()
+        public List<SelectListItem> UserRolesSelectList()
         {
-            IQueryable<Role> roles = _roleAppService.GetAllRoles().Result;
-            return roles.Select(x => new SelectListItem {Value = x.Id.ToString(), Text = x.Name});
+            List<Role> roles =  _roleAppService.GetAllRoles();
+            return  roles.Select(x => new SelectListItem {Value = x.Id.ToString(), Text = x.Name}).ToList();
             //return _stateAppService.GetSimpleList().Select(p => new SelectListItem { Value = p.StateAbbreviation, Text = p.Name }).ToList().AsEnumerable();
         }
 
